@@ -72,7 +72,7 @@
             <header><h1>// Scientific_Calculator</h1></header>
             <div class="calc-layout">
                 <div class="calc-engine">
-                    <div class="search-container display"><input type="text" id="calcInp" placeholder="0" inputmode="decimal"></div>
+                    <div class="search-container display"><input type="text" id="calcInp" placeholder="0" readonly></div>
                     <div id="calcResult" class="calc-live-res">0</div>
                     <div class="calc-buttons">
                         <button class="c-btn sci" onclick="calcAction('Math.sin(')">sin</button>
@@ -99,8 +99,9 @@
                         <button class="c-btn num" onclick="calcAction('.')">.</button>
                         <button class="c-btn num" onclick="calcAction('/100')">%</button>
                         <button class="c-btn op" onclick="calcAction('+')">+</button>
+                        <button class="c-btn danger" onclick="backspaceCalc()"><span class="material-symbols-outlined">backspace</span></button>
                         <button class="c-btn danger" onclick="clearCalc()">AC</button>
-                        <button class="c-btn equal" onclick="runCalc()" style="grid-column: span 3">=</button>
+                        <button class="c-btn equal" onclick="runCalc()" style="grid-column: span 2">=</button>
                     </div>
                 </div>
                 <div class="calc-history-panel">

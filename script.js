@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const cInp = document.getElementById("calcInp");
-function calcAction(v) { cInp.value += v; cInp.focus(); }
+function calcAction(v) { cInp.value += v;}
 function clearCalc() { cInp.value = ""; document.getElementById("calcResult").innerText = "0"; }
 function runCalc() {
     try {
@@ -215,6 +215,13 @@ function runCalc() {
         cInp.value = res;
     } catch(e) { document.getElementById("calcResult").innerText = "Error"; }
 }
+
+function backspaceCalc() {
+    const cInp = document.getElementById("calcInp");
+    // Menghapus 1 karakter terakhir
+    cInp.value = cInp.value.slice(0, -1);
+}
+
 function renderCalcHistory() {
     document.getElementById("calcHistoryList").innerHTML = appData.calcHistory.map(h => `
         <div class="history-item" onclick="document.getElementById('calcInp').value='${h.res}'">
