@@ -1,0 +1,722 @@
+{
+  "searchGroups": [
+    {
+      "id": 1772958594904,
+      "summary": "Academic",
+      "urls": [
+        {
+          "id": 1772958602943,
+          "url": "https://scholar.google.com/scholar?hl=en&scisbd=1&as_sdt=0%2C5&q=",
+          "label": "scholar.google.com"
+        },
+        {
+          "id": 1772958609986,
+          "url": "https://www.sciencedirect.com/search?qs=",
+          "label": "www.sciencedirect.com"
+        },
+        {
+          "id": 1772958616530,
+          "url": "https://www.ncbi.nlm.nih.gov/search/all/?term=",
+          "label": "www.ncbi.nlm.nih.gov"
+        },
+        {
+          "id": 1772958621121,
+          "url": "https://www.researchgate.net/search/publication?q=",
+          "label": "www.researchgate.net"
+        },
+        {
+          "id": 1772958624895,
+          "url": "https://www.base-search.net/Search/Results?lookfor=",
+          "label": "www.base-search.net"
+        },
+        {
+          "id": 1772958629811,
+          "url": "https://pubpeer.com/search?q=",
+          "label": "pubpeer.com"
+        },
+        {
+          "id": 1772958635253,
+          "url": "https://zenodo.org/search?q=",
+          "label": "zenodo.org"
+        },
+        {
+          "id": 1772958639555,
+          "url": "https://www.neliti.com/search?q=",
+          "label": "www.neliti.com"
+        },
+        {
+          "id": 1772958644410,
+          "url": "https://archive.org/search?query=",
+          "label": "archive.org"
+        }
+      ],
+      "isOpened": false
+    },
+    {
+      "id": 1772962866547,
+      "summary": "General Search",
+      "urls": [
+        {
+          "id": 1772962870682,
+          "url": "https://www.google.com/search?q=",
+          "label": "www.google.com"
+        },
+        {
+          "id": 1772962877947,
+          "url": "https://yandex.com/search/?text=",
+          "label": "yandex.com"
+        },
+        {
+          "id": 1772962882050,
+          "url": "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=",
+          "label": "www.baidu.com"
+        },
+        {
+          "id": 1772962886817,
+          "url": "https://www.bing.com/search?q=",
+          "label": "www.bing.com"
+        }
+      ],
+      "isOpened": false
+    },
+    {
+      "id": 1772963578528,
+      "summary": "Broad Search",
+      "urls": [
+        {
+          "id": 1772963582445,
+          "url": "https://www.google.com/search?q=",
+          "label": "www.google.com"
+        },
+        {
+          "id": 1772963584993,
+          "url": "https://yandex.com/search/?text=",
+          "label": "yandex.com"
+        },
+        {
+          "id": 1772963588659,
+          "url": "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=",
+          "label": "www.baidu.com"
+        },
+        {
+          "id": 1772963591333,
+          "url": "https://www.bing.com/search?q=",
+          "label": "www.bing.com"
+        },
+        {
+          "id": 1772963594084,
+          "url": "https://patents.google.com/?q=",
+          "label": "patents.google.com"
+        },
+        {
+          "id": 1772963596702,
+          "url": "https://scholar.google.com/scholar?hl=en&scisbd=1&as_sdt=0%2C5&q=",
+          "label": "scholar.google.com"
+        },
+        {
+          "id": 1772963599367,
+          "url": "https://www.researchgate.net/search/publication?q=",
+          "label": "www.researchgate.net"
+        },
+        {
+          "id": 1772963602523,
+          "url": "https://www.ncbi.nlm.nih.gov/search/all/?term=",
+          "label": "www.ncbi.nlm.nih.gov"
+        },
+        {
+          "id": 1772963610640,
+          "url": "https://pubpeer.com/search?q=",
+          "label": "pubpeer.com"
+        },
+        {
+          "id": 1772963615489,
+          "url": "https://www.sciencedirect.com/search?qs=",
+          "label": "www.sciencedirect.com"
+        },
+        {
+          "id": 1772963625614,
+          "url": "https://www.base-search.net/Search/Results?lookfor=",
+          "label": "www.base-search.net"
+        },
+        {
+          "id": 1772963628259,
+          "url": "https://zenodo.org/search?q=",
+          "label": "zenodo.org"
+        },
+        {
+          "id": 1772963631447,
+          "url": "https://archive.org/search?query=",
+          "label": "archive.org"
+        },
+        {
+          "id": 1772963636243,
+          "url": "https://id.wikipedia.org/wiki/",
+          "label": "id.wikipedia.org"
+        },
+        {
+          "id": 1772963640723,
+          "url": "https://www.britannica.com/",
+          "label": "www.britannica.com"
+        }
+      ],
+      "isOpened": false
+    }
+  ],
+  "translatorUrls": [
+    {
+      "id": 1,
+      "name": "Google",
+      "url": "https://translate.google.com/?sl={from}&tl={to}&text={text}&op=translate",
+      "enabled": true
+    }
+  ],
+  "linkGroups": [
+    {
+      "id": 1772956040162,
+      "summary": "Academic",
+      "urls": [
+        {
+          "id": 1772957911495,
+          "label": "Google Scholar",
+          "url": "https://scholar.google.com/"
+        },
+        {
+          "id": 1772957928789,
+          "label": "Science Direct",
+          "url": "https://www.sciencedirect.com/"
+        },
+        {
+          "id": 1772958742583,
+          "label": "NCBI",
+          "url": "https://www.ncbi.nlm.nih.gov/"
+        },
+        {
+          "id": 1772958766601,
+          "label": "Research Gate",
+          "url": "https://www.researchgate.net/"
+        },
+        {
+          "id": 1772958850043,
+          "label": "Base",
+          "url": "https://www.base-search.net/"
+        },
+        {
+          "id": 1772958866150,
+          "label": "Pubpeer",
+          "url": "https://pubpeer.com/"
+        },
+        {
+          "id": 1772958888354,
+          "label": "Zenodo",
+          "url": "https://zenodo.org/"
+        },
+        {
+          "id": 1772958915972,
+          "label": "Neliti",
+          "url": "https://www.neliti.com/"
+        },
+        {
+          "id": 1772958954584,
+          "label": "Archive",
+          "url": "https://archive.org/"
+        },
+        {
+          "id": 1772959006370,
+          "label": "Scimago",
+          "url": "https://www.scimagojr.com/"
+        },
+        {
+          "id": 1772959072210,
+          "label": "Britannica",
+          "url": "https://www.britannica.com/"
+        }
+      ],
+      "isOpened": false
+    },
+    {
+      "id": 1772959024707,
+      "summary": "Data",
+      "urls": [
+        {
+          "id": 1772959109328,
+          "label": "World Monitor",
+          "url": "https://www.worldmonitor.app/"
+        },
+        {
+          "id": 1772959144056,
+          "label": "Our World in Data",
+          "url": "https://ourworldindata.org/"
+        },
+        {
+          "id": 1772959156736,
+          "label": "UNdata",
+          "url": "http://data.un.org/"
+        },
+        {
+          "id": 1772959189302,
+          "label": "World Bank Open Data",
+          "url": "https://data.worldbank.org/"
+        },
+        {
+          "id": 1772959207794,
+          "label": "GBIF",
+          "url": "https://www.gbif.org/"
+        },
+        {
+          "id": 1772959219256,
+          "label": "IUCN",
+          "url": "https://www.iucnredlist.org/"
+        },
+        {
+          "id": 1772959236204,
+          "label": "WoRMS",
+          "url": "https://www.marinespecies.org/"
+        },
+        {
+          "id": 1772959254580,
+          "label": "iNaturalist",
+          "url": "https://www.inaturalist.org/"
+        },
+        {
+          "id": 1772959284550,
+          "label": "Google Dataset Search",
+          "url": "https://datasetsearch.research.google.com/"
+        },
+        {
+          "id": 1772959311336,
+          "label": "Google Patent",
+          "url": "https://patents.google.com/"
+        },
+        {
+          "id": 1772959914547,
+          "label": "Blast NCBI",
+          "url": "https://blast.ncbi.nlm.nih.gov/"
+        },
+        {
+          "id": 1772961132134,
+          "label": "SteamDB",
+          "url": "https://steamdb.info/"
+        },
+        {
+          "id": 1772962047286,
+          "label": "Google Earth",
+          "url": "https://earth.google.com/"
+        }
+      ],
+      "isOpened": false
+    },
+    {
+      "id": 1772959431834,
+      "summary": "AI Tools",
+      "urls": [
+        {
+          "id": 1772959443288,
+          "label": "ChatGPT",
+          "url": "https://chatgpt.com/"
+        },
+        {
+          "id": 1772959459980,
+          "label": "BLACKBOX",
+          "url": "http://blackbox.ai/"
+        },
+        {
+          "id": 1772959468102,
+          "label": "Gemini",
+          "url": "https://gemini.google.com/app"
+        },
+        {
+          "id": 1772959540276,
+          "label": "WolframAlpha",
+          "url": "https://www.wolframalpha.com/"
+        },
+        {
+          "id": 1772959571624,
+          "label": "Perplexity",
+          "url": "https://www.perplexity.ai/"
+        },
+        {
+          "id": 1772959585398,
+          "label": "Deepl",
+          "url": "https://www.deepl.com/en/translator"
+        },
+        {
+          "id": 1772959612640,
+          "label": "Luvvoice",
+          "url": "https://luvvoice.com/"
+        },
+        {
+          "id": 1772959657430,
+          "label": "Voice Changer",
+          "url": "https://voicechanger.io/"
+        },
+        {
+          "id": 1772959691198,
+          "label": "ai-text-to-image-generator",
+          "url": "https://perchance.org/ai-text-to-image-generator"
+        },
+        {
+          "id": 1772959725688,
+          "label": "AI Image Upscaler",
+          "url": "https://imgupscaler.com/"
+        },
+        {
+          "id": 1772959737354,
+          "label": "Perchance",
+          "url": "https://perchance.org/generators"
+        }
+      ],
+      "isOpened": false
+    },
+    {
+      "id": 1772959782599,
+      "summary": "Utility & Conversion",
+      "urls": [
+        {
+          "id": 1772959811302,
+          "label": "FreeConvert",
+          "url": "https://www.freeconvert.com/"
+        },
+        {
+          "id": 1772959840432,
+          "label": "PDF to Word",
+          "url": "https://www.ilovepdf.com/pdf_to_word"
+        },
+        {
+          "id": 1772959954514,
+          "label": "Overleaf LaTeX Editor",
+          "url": "https://www.overleaf.com/"
+        },
+        {
+          "id": 1772960004047,
+          "label": "SEOStudio",
+          "url": "https://seostudio.tools/"
+        },
+        {
+          "id": 1772961752756,
+          "label": "NormalMap Online",
+          "url": "https://cpetry.github.io/NormalMap-Online/"
+        },
+        {
+          "id": 1772961767766,
+          "label": "Auto Draw",
+          "url": "https://www.autodraw.com/"
+        },
+        {
+          "id": 1772961796472,
+          "label": "PBR Generator",
+          "url": "https://pbr-gen.vercel.app/"
+        },
+        {
+          "id": 1772961888388,
+          "label": "Compress Image",
+          "url": "https://www.iloveimg.com/compress-image"
+        },
+        {
+          "id": 1772961905480,
+          "label": "Remove.bg",
+          "url": "http://remove.bg/"
+        },
+        {
+          "id": 1772961974682,
+          "label": "Wheel of Names",
+          "url": "https://wheelofnames.com/"
+        }
+      ],
+      "isOpened": false
+    },
+    {
+      "id": 1772960431834,
+      "summary": "Game Asset",
+      "urls": [
+        {
+          "id": 1772960443481,
+          "label": "Unity Asset Store",
+          "url": "https://assetstore.unity.com/"
+        },
+        {
+          "id": 1772960450431,
+          "label": "Fab",
+          "url": "https://www.fab.com/"
+        },
+        {
+          "id": 1772960464865,
+          "label": "itch.io",
+          "url": "http://itch.io/"
+        },
+        {
+          "id": 1772960483921,
+          "label": "ambientCG",
+          "url": "https://ambientcg.com/"
+        },
+        {
+          "id": 1772960495852,
+          "label": "Poly Haven",
+          "url": "https://polyhaven.com/"
+        },
+        {
+          "id": 1772960512063,
+          "label": "Share Textures",
+          "url": "https://www.sharetextures.com/"
+        },
+        {
+          "id": 1772960546979,
+          "label": "3Dassets.one",
+          "url": "https://3dassets.one/"
+        },
+        {
+          "id": 1772960564867,
+          "label": "kenney",
+          "url": "https://kenney.nl/assets"
+        },
+        {
+          "id": 1772960602235,
+          "label": "Gamedev Market",
+          "url": "https://www.gamedevmarket.net/"
+        },
+        {
+          "id": 1772960753515,
+          "label": "CraftPix",
+          "url": "https://craftpix.net/freebies/"
+        },
+        {
+          "id": 1772960764069,
+          "label": "Poly Pizza",
+          "url": "https://poly.pizza/"
+        },
+        {
+          "id": 1772960830151,
+          "label": "Sketchfab",
+          "url": "https://sketchfab.com/"
+        },
+        {
+          "id": 1772960859733,
+          "label": "Clara.io",
+          "url": "https://clara.io/library"
+        },
+        {
+          "id": 1772960887391,
+          "label": "TextureCan",
+          "url": "https://www.texturecan.com/"
+        },
+        {
+          "id": 1772960905743,
+          "label": "OpenGameArt",
+          "url": "https://opengameart.org/"
+        },
+        {
+          "id": 1772960999974,
+          "label": "Blacave",
+          "url": "https://blacave.com/"
+        },
+        {
+          "id": 1772961040804,
+          "label": "Artstation",
+          "url": "https://www.artstation.com/"
+        }
+      ],
+      "isOpened": false
+    },
+    {
+      "id": 1772960730458,
+      "summary": "Social Media & Forums",
+      "urls": [
+        {
+          "id": 1772961207130,
+          "label": "Youtube",
+          "url": "https://www.youtube.com/"
+        },
+        {
+          "id": 1772961227504,
+          "label": "BiliBili",
+          "url": "https://www.bilibili.tv/en"
+        },
+        {
+          "id": 1772961489202,
+          "label": "Quora",
+          "url": "https://www.quora.com/"
+        },
+        {
+          "id": 1772961498052,
+          "label": "Discord",
+          "url": "https://discord.com/"
+        },
+        {
+          "id": 1772961523914,
+          "label": "Whatsapp Web",
+          "url": "https://web.whatsapp.com/"
+        },
+        {
+          "id": 1772961565340,
+          "label": "Telegram",
+          "url": "https://web.telegram.org/a/"
+        },
+        {
+          "id": 1772961595662,
+          "label": "Instagran",
+          "url": "https://www.instagram.com/"
+        },
+        {
+          "id": 1772961630922,
+          "label": "Tiktok",
+          "url": "https://www.tiktok.com/en/"
+        },
+        {
+          "id": 1772961664656,
+          "label": "X.com",
+          "url": "https://x.com/"
+        },
+        {
+          "id": 1772961695158,
+          "label": "Facebook",
+          "url": "https://www.facebook.com/"
+        }
+      ],
+      "isOpened": false
+    },
+    {
+      "id": 1772960929924,
+      "summary": "Multimedia",
+      "urls": [
+        {
+          "id": 1772960973789,
+          "label": "dafont",
+          "url": "https://www.dafont.com/"
+        },
+        {
+          "id": 1772961063273,
+          "label": "Google Fonts",
+          "url": "https://fonts.google.com/"
+        },
+        {
+          "id": 1772961088719,
+          "label": "Freesound",
+          "url": "https://freesound.org/"
+        },
+        {
+          "id": 1772961279374,
+          "label": "Antlii",
+          "url": "https://antlii.work/"
+        },
+        {
+          "id": 1772961290436,
+          "label": "Texture Fabrik",
+          "url": "https://texturefabrik.com/"
+        },
+        {
+          "id": 1772961361444,
+          "label": "Pixabay",
+          "url": "https://pixabay.com/"
+        },
+        {
+          "id": 1772961370718,
+          "label": "Unsplash",
+          "url": "https://unsplash.com/"
+        },
+        {
+          "id": 1772961463002,
+          "label": "Photopea",
+          "url": "https://www.photopea.com/"
+        },
+        {
+          "id": 1772961780746,
+          "label": "Mixkit",
+          "url": "https://mixkit.co/"
+        },
+        {
+          "id": 1772961833548,
+          "label": "TextureLabs",
+          "url": "https://texturelabs.org/"
+        },
+        {
+          "id": 1772961942376,
+          "label": "Texture Create",
+          "url": "https://gameanimation.info/texture-create/"
+        },
+        {
+          "id": 1772962486120,
+          "label": "Canva",
+          "url": "https://www.canva.com/"
+        }
+      ],
+      "isOpened": false
+    },
+    {
+      "id": 1772962129846,
+      "summary": "General Case",
+      "urls": [
+        {
+          "id": 1772962159342,
+          "label": "Google",
+          "url": "https://www.google.com/search?q="
+        },
+        {
+          "id": 1772962170579,
+          "label": "Bing",
+          "url": "https://www.bing.com/search?q="
+        },
+        {
+          "id": 1772962177846,
+          "label": "Yandex",
+          "url": "https://yandex.com/search/?text="
+        },
+        {
+          "id": 1772962185772,
+          "label": "Baidu",
+          "url": "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd="
+        },
+        {
+          "id": 1772962201903,
+          "label": "Gmail",
+          "url": "https://mail.google.com/mail/u/0/"
+        },
+        {
+          "id": 1772962213062,
+          "label": "GDrive",
+          "url": "https://drive.google.com/"
+        },
+        {
+          "id": 1772962232097,
+          "label": "Gdocs",
+          "url": "https://docs.google.com/"
+        },
+        {
+          "id": 1772962264183,
+          "label": "Gclassroom",
+          "url": "https://classroom.google.com/"
+        },
+        {
+          "id": 1772962275162,
+          "label": "Gmaps",
+          "url": "https://maps.google.com/"
+        },
+        {
+          "id": 1772962287033,
+          "label": "Notion",
+          "url": "https://www.notion.so/"
+        },
+        {
+          "id": 1772962309197,
+          "label": "GTranslate",
+          "url": "https://translate.google.com/"
+        },
+        {
+          "id": 1772962367853,
+          "label": "Tinyeye",
+          "url": "https://tineye.com/"
+        },
+        {
+          "id": 1772962381249,
+          "label": "Google Images",
+          "url": "https://www.google.com/imghp"
+        },
+        {
+          "id": 1772962417765,
+          "label": "Wikipedia",
+          "url": "https://id.wikipedia.org/wiki/"
+        }
+      ],
+      "isOpened": false
+    }
+  ],
+  "calcHistory": []
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Workplace Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body class="dither-bg">
+    <div class="sidebar">
+        <div class="logo">
+            <span class="material-symbols-outlined">terminal</span>
+            <span>G.W.D</span>
+        </div>
+        <nav class="nav-menu">
+            <button class="nav-btn active" onclick="switchTab('search')" title="Search"><span class="material-symbols-outlined">search</span></button>
+            <button class="nav-btn" onclick="switchTab('translator')" title="Translator"><span class="material-symbols-outlined">translate</span></button>
+            <button class="nav-btn" onclick="switchTab('interlink')" title="Links"><span class="material-symbols-outlined">link</span></button>
+            <button class="nav-btn" onclick="switchTab('calc')" title="Calculator"><span class="material-symbols-outlined">calculate</span></button>
+        </nav>
+        <div class="actions">
+            <button class="action-btn" onclick="exportData()" title="Export JSON"><span class="material-symbols-outlined">save</span></button>
+            <button class="action-btn" onclick="document.getElementById('importFile').click()" title="Import JSON"><span class="material-symbols-outlined">file_open</span></button>
+            <input type="file" id="importFile" style="display:none" onchange="importData(event)">
+        </div>
+    </div>
+
+    <main class="content">
+        <section id="tab-search" class="tab-content active">
+            <header>
+                <div class="search-container">
+                    <span class="prefix">~/search/</span>
+                    <input type="text" id="globalInp" placeholder="Enter query..." autofocus>
+                </div>
+            </header>
+            <div id="groupWrapper" class="grid-layout"></div>
+            <div class="footer-input">
+                <input type="text" id="newGroupName" placeholder="+ New Search Group (Press Enter)">
+            </div>
+        </section>
+
+        <section id="tab-translator" class="tab-content">
+            <header>
+                <div class="search-container">
+                    <span class="prefix">~/translate/</span>
+                    <input type="text" id="transInp" placeholder="Text to translate...">
+                </div>
+                <div class="trans-controls">
+                    <select id="langFrom"><option value="auto">Detect</option><option value="id">Indonesian</option><option value="en">English</option></select>
+                    <button class="swap-btn" onclick="swapLanguages()"><span class="material-symbols-outlined">sync_alt</span></button>
+                    <select id="langTo"><option value="id" selected>Indonesian</option><option value="en">English</option></select>
+                </div>
+            </header>
+            <div id="transWrapper" class="grid-layout"></div>
+            <div class="footer-input">
+                </div>
+        </section>
+
+        <section id="tab-interlink" class="tab-content">
+            <header><h1>// Quick_Interlinks</h1></header>
+            <div id="linkGroupWrapper" class="grid-layout"></div>
+            <div class="footer-input">
+                <input type="text" id="newLinkGroupName" placeholder="+ New Group Name (Press Enter)">
+            </div>
+        </section>
+
+        <section id="tab-calc" class="tab-content">
+            <header><h1>// Scientific_Calculator</h1></header>
+            <div class="calc-layout">
+                <div class="calc-engine">
+                    <div class="search-container display"><input type="text" id="calcInp" placeholder="0"></div>
+                    <div id="calcResult" class="calc-live-res">0</div>
+                    <div class="calc-buttons">
+                        <button class="c-btn sci" onclick="calcAction('Math.sin(')">sin</button>
+                        <button class="c-btn sci" onclick="calcAction('Math.cos(')">cos</button>
+                        <button class="c-btn sci" onclick="calcAction('Math.tan(')">tan</button>
+                        <button class="c-btn sci" onclick="calcAction('Math.log10(')">log</button>
+                        <button class="c-btn sci" onclick="calcAction('Math.sqrt(')">√</button>
+                        <button class="c-btn sci" onclick="calcAction('**')">^</button>
+                        <button class="c-btn sci" onclick="calcAction('(')">(</button>
+                        <button class="c-btn sci" onclick="calcAction(')')">)</button>
+                        <button class="c-btn num" onclick="calcAction('7')">7</button>
+                        <button class="c-btn num" onclick="calcAction('8')">8</button>
+                        <button class="c-btn num" onclick="calcAction('9')">9</button>
+                        <button class="c-btn op" onclick="calcAction('/')">/</button>
+                        <button class="c-btn num" onclick="calcAction('4')">4</button>
+                        <button class="c-btn num" onclick="calcAction('5')">5</button>
+                        <button class="c-btn num" onclick="calcAction('6')">6</button>
+                        <button class="c-btn op" onclick="calcAction('*')">×</button>
+                        <button class="c-btn num" onclick="calcAction('1')">1</button>
+                        <button class="c-btn num" onclick="calcAction('2')">2</button>
+                        <button class="c-btn num" onclick="calcAction('3')">3</button>
+                        <button class="c-btn op" onclick="calcAction('-')">-</button>
+                        <button class="c-btn num" onclick="calcAction('0')">0</button>
+                        <button class="c-btn num" onclick="calcAction('.')">.</button>
+                        <button class="c-btn num" onclick="calcAction('/100')">%</button>
+                        <button class="c-btn op" onclick="calcAction('+')">+</button>
+                        <button class="c-btn danger" onclick="clearCalc()">AC</button>
+                        <button class="c-btn equal" onclick="runCalc()" style="grid-column: span 3">=</button>
+                    </div>
+                </div>
+                <div class="calc-history-panel">
+                    <div class="h-head"><span>HISTORY</span><button onclick="clearCalcHistory()">Clear</button></div>
+                    <div id="calcHistoryList"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

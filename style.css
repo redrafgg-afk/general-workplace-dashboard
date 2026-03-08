@@ -1,0 +1,311 @@
+:root {
+    --vscode-bg: #1e1e1e;
+    --vscode-sidebar: #252526;
+    --vscode-card: #2d2d2d;
+    --vscode-accent: #007acc;
+    --vscode-text: #cccccc;
+    --vscode-input: #3c3c3c;
+    --vscode-highlight: #4d4d4d;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-mono);
+    background-color: var(--vscode-bg);
+    color: var(--vscode-text);
+    display: flex;
+    height: 100vh;
+}
+
+/* Efek Dither pada Background */
+.dither-bg {
+    background-image: radial-gradient(circle, #252526 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.sidebar {
+    width: 60px;
+    background: var(--vscode-sidebar);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    border-right: 1px solid #333;
+}
+
+.logo {
+    color: var(--vscode-accent);
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 10px;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+header {
+    padding: 20px 40px;
+}
+
+.search-container {
+    background: var(--vscode-input);
+    padding: 10px 15px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #444;
+}
+
+.search-container input {
+    background: transparent;
+    border: none;
+    color: #569cd6;
+    width: 100%;
+    outline: none;
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 0 40px;
+}
+
+/* Dropdown (Details/Summary) Styling */
+details {
+    background: var(--vscode-card);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+details[open] {
+    border-color: var(--vscode-accent);
+}
+
+summary {
+    list-style: none;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: #ce9178;
+}
+
+summary::after {
+    content: 'expand_more';
+    font-family: 'Material Symbols Outlined';
+    transition: 0.3s;
+}
+
+details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.url-container {
+    padding: 12px;
+    background: #252526;
+    border-top: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.url-row {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 8px;
+}
+
+input[type="text"] {
+    background: var(--vscode-input);
+    border: 1px solid #444;
+    color: #9cdcfe;
+    padding: 5px 8px;
+    border-radius: 2px;
+}
+
+button {
+    background: var(--vscode-highlight);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+button:hover {
+    background: var(--vscode-accent);
+}
+
+.btn-search-all {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background: var(--vscode-accent);
+    justify-content: center;
+}
+
+.footer-input {
+    padding: 40px;
+}
+
+/* Gunakan :root yang sudah ada di file Anda */
+:root {
+    --vscode-bg: #1e1e1e;
+    --vscode-sidebar: #252526;
+    --vscode-card: #2d2d2d;
+    --vscode-accent: #007acc;
+    --vscode-text: #cccccc;
+    --vscode-input: #3c3c3c;
+    --vscode-highlight: #4d4d4d;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* FIX TABBING */
+.tab-content { display: none; flex-direction: column; height: 100vh; }
+.tab-content.active { display: flex !important; }
+
+/* SIDEBAR & NAV */
+.nav-menu { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; flex: 1; }
+.nav-btn, .action-btn { 
+    background: transparent; color: #858585; border: none; 
+    cursor: pointer; padding: 12px; transition: 0.2s; 
+}
+.nav-btn.active { color: var(--vscode-accent); border-left: 2px solid var(--vscode-accent); }
+.nav-btn:hover, .action-btn:hover { color: white; }
+
+/* TRANSLATOR CONTROLS */
+.trans-controls { display: flex; gap: 10px; padding: 10px 40px; align-items: center; }
+.trans-controls select { background: var(--vscode-input); color: #9cdcfe; border: 1px solid #444; padding: 5px; font-family: inherit; }
+.swap-btn { background: transparent; color: var(--vscode-accent); border: none; cursor: pointer; display: flex; align-items: center; }
+
+/* CALC STYLING */
+.calc-layout { display: grid; grid-template-columns: 1fr 300px; gap: 20px; padding: 0 40px; }
+.calc-buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin-top: 15px; }
+.c-btn { padding: 15px; border: none; cursor: pointer; background: #3c3c3c; color: white; font-family: inherit; }
+.c-btn.sci { background: #2d2d2d; color: #4ec9b0; }
+.c-btn.op { background: var(--vscode-accent); }
+.c-btn.danger { background: #f44747; }
+.c-btn.equal { background: #608b4e; }
+.calc-live-res { background: #1a1a1a; padding: 15px; text-align: right; color: #b5cea8; font-size: 1.5rem; border: 1px solid #333; }
+.calc-history-panel { background: var(--vscode-card); border: 1px solid #333; height: 400px; overflow-y: auto; }
+.h-head { padding: 10px; background: #333; display: flex; justify-content: space-between; font-size: 0.8rem; }
+.history-item { padding: 8px; border-bottom: 1px solid #333; cursor: pointer; }
+.history-item:hover { background: #3c3c3c; }
+
+/* Tetapkan Style Sidebar dan Layout dari File Awal Anda */
+body { margin: 0; font-family: var(--font-mono); background-color: var(--vscode-bg); color: var(--vscode-text); display: flex; height: 100vh; overflow: hidden; }
+.sidebar { width: 60px; background: var(--vscode-sidebar); display: flex; flex-direction: column; align-items: center; padding: 20px 0; border-right: 1px solid #333; }
+.content { flex: 1; display: flex; flex-direction: column; overflow-y: auto; }
+.grid-layout { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; padding: 0 40px; }
+
+/* List Link agar rapi */
+.link-list-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Styling Kotak Label Link */
+.quick-link-item {
+    display: inline-flex;
+    align-items: center;
+    background: var(--vscode-card);
+    color: #4ec9b0;          /* Warna cyan khas VS Code */
+    border: 1px solid #444;  /* Border tipis */
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.quick-link-item:hover {
+    background: var(--vscode-highlight);
+    border-color: var(--vscode-accent);
+    color: #fff;
+}
+
+/* Pembungkus individu (Label + Tombol Hapus) */
+.link-tag-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Tombol hapus kecil di pojok label */
+.btn-delete-link {
+    background: #f44747;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -8px; /* Sedikit menumpuk di kanan label */
+    margin-top: -12px;
+    z-index: 2;
+    opacity: 0.7;
+}
+
+.btn-delete-link:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Form Input di bawah Link */
+.add-link-form {
+    display: flex;
+    gap: 5px;
+    background: #1e1e1e;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #3c3c3c;
+    /* Memastikan form tidak keluar dari box */
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+/* Menyesuaikan input di dalam form agar tidak overload */
+.add-link-form input {
+    background: #3c3c3c;
+    border: 1px solid #555;
+    color: #ccc;
+    padding: 5px 8px;
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    outline: none;
+}
+
+.add-link-form input:focus {
+    border-color: var(--vscode-accent);
+}
+
+/* Tombol + agar tetap simetris */
+.add-link-form .icon-btn {
+    padding: 0 10px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--vscode-accent);
+}
