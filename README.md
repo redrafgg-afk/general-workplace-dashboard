@@ -39,7 +39,7 @@ When you first open the online dashboard, it will be empty because the data is s
 ## 🚀 How to Run
 
 ### 1. Online (GitHub Pages)
-Simply visit: `https://your-username.github.io/general-workplace-dashboard/`
+Simply visit: `https://redrafgg-afk.github.io/general-workplace-dashboard/`
 
 ### 2. Local Desktop/Mobile
 - **Desktop**: Download the files and open `index.html` in any browser.
