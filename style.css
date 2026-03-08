@@ -30,21 +30,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 0; /* Kurangi padding atas bawah */
+    padding: 10px 0;
     border-right: 1px solid #333;
     height: 100vh;
-    position: sticky;
-    top: 0;
 }
 
 .actions {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    margin-top: auto; /* Mendorong tombol save/load ke paling bawah */
-    padding-bottom: 15px;
-    width: 100%;
-    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px; /* Jarak bawah sebelum menu search */
+    order: 1; /* Memberi urutan pertama setelah logo */
 }
 
 .action-btn, .nav-btn {
@@ -198,7 +194,13 @@ button:hover {
 .tab-content.active { display: flex !important; }
 
 /* SIDEBAR & NAV */
-.nav-menu { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; flex: 1; }
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    order: 2; /* Menu navigasi di bawah tombol save/load */
+}
 .nav-btn, .action-btn { 
     background: transparent; color: #858585; border: none; 
     cursor: pointer; padding: 12px; transition: 0.2s; 
@@ -325,4 +327,19 @@ body { margin: 0; font-family: var(--font-mono); background-color: var(--vscode-
     align-items: center;
     justify-content: center;
     background: var(--vscode-accent);
+}
+
+#transInp {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #9cdcfe;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    outline: none;
+    padding: 5px 0;
+    resize: none; /* Menghilangkan manual resize */
+    overflow-y: hidden; /* Sembunyikan scrollbar agar rapi */
+    line-height: 1.5;
+    display: block;
 }

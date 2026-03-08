@@ -44,7 +44,10 @@
             <header>
                 <div class="search-container">
                     <span class="prefix">~/translate/</span>
-                    <input type="text" id="transInp" placeholder="Text to translate...">
+                    <textarea id="transInp" placeholder="Text to translate..." rows="1"></textarea>
+                    <button onclick="executeTranslate()" class="icon-btn" style="margin-left: 10px; background: var(--vscode-accent);">
+                        <span class="material-symbols-outlined">send</span>
+                    </button>
                 </div>
                 <div class="trans-controls">
                     <select id="langFrom"><option value="auto">Detect</option><option value="id">Indonesian</option><option value="en">English</option></select>

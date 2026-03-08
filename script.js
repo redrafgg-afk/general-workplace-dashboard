@@ -83,15 +83,39 @@ function renderTranslator() {
         </div>`;
 }
 
-document.getElementById("transInp").onkeydown = (e) => {
-    if(e.key === "Enter" && e.target.value !== "") {
-        const text = encodeURIComponent(e.target.value);
+const transArea = document.getElementById("transInp");
+
+transArea.addEventListener("input", function() {
+    // Logika Auto-Resize: Menyesuaikan tinggi kotak mengikuti jumlah baris
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+});
+
+transArea.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        // Jika Shift + Enter (atau Enter di HP yang biasanya mengirim event normal)
+        // Kita ijinkan baris baru jika Shift ditekan
+        if (e.shiftKey) {
+            // Biarkan browser membuat baris baru secara alami
+        } else {
+            // Jika Enter saja (Desktop), kirim ke Google Translate
+            e.preventDefault();
+            executeTranslate();
+        }
+    }
+});
+
+function executeTranslate() {
+    const inp = document.getElementById("transInp");
+    const val = inp.value.trim();
+    if(val !== "") {
+        const text = encodeURIComponent(val);
         const from = document.getElementById("langFrom").value;
         const to = document.getElementById("langTo").value;
         const googleUrl = `https://translate.google.com/?sl=${from}&tl=${to}&text=${text}&op=translate`;
         window.open(googleUrl, "_blank");
     }
-};
+}
 
 // --- INTERLINK LOGIC ---
 function renderInterlinks() {
@@ -166,10 +190,15 @@ function deleteSingleLink(groupId, linkId) {
 }
 
 // --- CALCULATOR LOGIC ---
-document.getElementById("calcInp").addEventListener("keydown", function(e) {
-    if (e.key === "Enter") {
-        e.preventDefault(); // Mencegah form reload
-        runCalc(); // Memanggil fungsi hitung hasil (=)
+document.addEventListener('DOMContentLoaded', () => {
+    const calcInput = document.getElementById("calcInp");
+    if(calcInput) {
+        calcInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                runCalc();
+            }
+        });
     }
 });
 
