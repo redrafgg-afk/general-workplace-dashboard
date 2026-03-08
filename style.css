@@ -30,8 +30,25 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 0;
+    padding: 10px 0; /* Kurangi padding atas bawah */
     border-right: 1px solid #333;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: auto; /* Mendorong tombol save/load ke paling bawah */
+    padding-bottom: 15px;
+    width: 100%;
+    align-items: center;
+}
+
+.action-btn, .nav-btn {
+    padding: 10px; /* Perkecil sedikit agar muat di layar HP pendek */
 }
 
 .logo {

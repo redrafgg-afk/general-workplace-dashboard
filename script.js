@@ -166,6 +166,13 @@ function deleteSingleLink(groupId, linkId) {
 }
 
 // --- CALCULATOR LOGIC ---
+document.getElementById("calcInp").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        e.preventDefault(); // Mencegah form reload
+        runCalc(); // Memanggil fungsi hitung hasil (=)
+    }
+});
+
 const cInp = document.getElementById("calcInp");
 function calcAction(v) { cInp.value += v; cInp.focus(); }
 function clearCalc() { cInp.value = ""; document.getElementById("calcResult").innerText = "0"; }
