@@ -29,14 +29,46 @@
     <main class="content">
         <section id="tab-search" class="tab-content active">
             <header>
-                <div class="search-container">
+                <!-- Toggle Switch Mode Search -->
+                <div class="search-mode-toggle" style="margin-bottom: 10px; display: flex; gap: 10px;">
+                    <button id="btnModeMulti" class="mode-btn active" onclick="switchSearchMode('multi')">Mode 1: Multi-Engine</button>
+                    <button id="btnModeBranch" class="mode-btn" onclick="switchSearchMode('branch')">Mode 2: Single-Engine Branching</button>
+                </div>
+
+                <!-- Mode 1: Main Input Biasa -->
+                <div id="multiSearchContainer" class="search-container">
                     <span class="prefix">~/search/</span>
                     <input type="text" id="globalInp" placeholder="Enter query..." autofocus>
                 </div>
+
+                <!-- Mode 2: Branching Search UI -->
+                <div id="branchSearchContainer" class="branch-search-wrapper" style="display: none;">
+                    <div class="search-container" style="margin-bottom: 10px;">
+                        <span class="prefix">~/branch-main/</span>
+                        <input type="text" id="branchMainInp" placeholder="Main Search (Batang Utama)...">
+                    </div>
+                    
+                    <div class="branch-controls">
+                        <p style="font-size: 0.8rem; color: #888; margin: 5px 0;">Pilih 1 Search Engine:</p>
+                        <div id="selectedBranchEngine" class="selected-engine-badge">Belum ada engine terpilih (Pilih dari daftar di bawah)</div>
+                    </div>
+                </div>
             </header>
-            <div id="groupWrapper" class="grid-layout"></div>
-            <div class="footer-input">
-                <input type="text" id="newGroupName" placeholder="+ New Search Group (Press Enter)">
+
+            <!-- Content Mode 1 -->
+            <div id="multiSearchContent">
+                <div id="groupWrapper" class="grid-layout"></div>
+                <div class="footer-input">
+                    <input type="text" id="newGroupName" placeholder="+ New Search Group (Press Enter)">
+                </div>
+            </div>
+
+            <!-- Content Mode 2 -->
+            <div id="branchSearchContent" style="display: none;">
+                <div id="branchGroupWrapper" class="grid-layout"></div>
+                <div class="footer-input">
+                    <input type="text" id="newBranchGroupName" placeholder="+ New Branch Group (Press Enter)">
+                </div>
             </div>
         </section>
 

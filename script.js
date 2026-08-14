@@ -2,13 +2,17 @@
 let appData = JSON.parse(localStorage.getItem("GWDconfig")) || {
     searchGroups: [],
     linkGroups: [],
-    calcHistory: []
+    calcHistory: [],
+    branchGroups: [],      // Tempat menyimpan link/engine khusus Mode Branching
+    selectedBranchEngineUrl: "", // Engine tunggal yang sedang terpilih
+    currentSearchMode: "multi"   // Mode aktif: "multi" atau "branch
 };
 
 window.onload = () => renderAll();
 
 function renderAll() {
     renderSearch();
+    renderBranchSearch();
     renderTranslator();
     renderInterlinks();
     renderCalcHistory();
@@ -17,6 +21,159 @@ function renderAll() {
 
 function saveData() {
     localStorage.setItem("GWDconfig", JSON.stringify(appData));
+}
+
+function switchSearchMode(mode) {
+    appData.currentSearchMode = mode;
+    const isMulti = mode === 'multi';
+    
+    document.getElementById('multiSearchContainer').style.display = isMulti ? 'flex' : 'none';
+    document.getElementById('multiSearchContent').style.display = isMulti ? 'block' : 'none';
+    document.getElementById('btnModeMulti').classList.toggle('active', isMulti);
+
+    document.getElementById('branchSearchContainer').style.display = isMulti ? 'none' : 'block';
+    document.getElementById('branchSearchContent').style.display = isMulti ? 'none' : 'block';
+    document.getElementById('btnModeBranch').classList.toggle('active', !isMulti);
+
+    saveData();
+}
+
+function renderBranchSearch() {
+    const wrapper = document.getElementById("branchGroupWrapper");
+    if (!wrapper) return;
+    wrapper.innerHTML = "";
+
+    // Tampilkan status engine terpilih
+    const engineBadge = document.getElementById("selectedBranchEngine");
+    if(engineBadge) {
+        engineBadge.innerText = appData.selectedBranchEngineUrl 
+            ? `Engine Terpilih: ${appData.selectedBranchEngineUrl}` 
+            : "Belum ada engine terpilih (Klik opsi di bawah untuk memilih 1 engine)";
+    }
+
+    appData.branchGroups = appData.branchGroups || [];
+    
+    appData.branchGroups.forEach(group => {
+        const details = document.createElement("details");
+        if (group.isOpened) details.open = true;
+        details.ontoggle = () => { group.isOpened = details.open; saveData(); };
+
+        // Pilihan Engine tunggal (Radio/Clickable selection)
+        const isSelected = appData.selectedBranchEngineUrl === group.engineUrl;
+        
+        details.innerHTML = `
+            <summary class="${isSelected ? 'selected-branch-group' : ''}">
+                <span><span style="color:#6a9955">//</span> ${group.summary}</span>
+                <div>
+                    <button onclick="selectBranchEngine('${group.engineUrl}')" style="background: ${isSelected ? '#007acc' : '#3c3c3c'}; color: white; padding: 2px 8px; font-size: 11px;">
+                        ${isSelected ? 'ACTIVE ENGINE' : 'SELECT ENGINE'}
+                    </button>
+                    <button onclick="deleteItem(${group.id}, 'branch')" style="background:transparent; color:#f44747; border:none;">×</button>
+                </div>
+            </summary>
+            <div class="url-container">
+                <div style="margin-bottom: 8px;">
+                    <label style="font-size: 11px; color:#888;">Base Search URL Engine:</label>
+                    <input type="text" value="${group.engineUrl || ''}" placeholder="e.g. https://www.google.com/search?q=" onchange="updateBranchEngineUrl(${group.id}, this.value)" style="width:100%; box-sizing:border-box;">
+                </div>
+
+                <div class="branches-list">
+                    <label style="font-size: 11px; color:#888;">List Branch (Dropdown Modifiers):</label>
+                    ${(group.branches || []).map((b, idx) => `
+                        <div class="url-row">
+                            <input type="text" value="${b}" onchange="updateBranchItem(${group.id}, ${idx}, this.value)" style="flex:1">
+                            <button onclick="deleteBranchItem(${group.id}, ${idx})" style="background:#f44747">×</button>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div class="url-row">
+                    <input type="text" placeholder="+ Add New Branch Keyword..." onkeydown="handleAddBranchKeyword(event, ${group.id})" style="flex:1">
+                </div>
+
+                <button class="btn-search-all" onclick="executeBranchSearch(${group.id})">EXECUTE_BRANCH_SEARCH</button>
+            </div>`;
+        wrapper.appendChild(details);
+    });
+}
+
+document.getElementById("newBranchGroupName")?.addEventListener("keydown", (e) => {
+    if(e.key === "Enter" && e.target.value !== "") {
+        appData.branchGroups = appData.branchGroups || [];
+        appData.branchGroups.push({ 
+            id: Date.now(), 
+            summary: e.target.value, 
+            engineUrl: "https://www.google.com/search?q=", 
+            branches: [], 
+            isOpened: true 
+        });
+        e.target.value = "";
+        renderAll();
+    }
+});
+
+function selectBranchEngine(url) {
+    if(!url) { alert("Isi Search Engine Base URL terlebih dahulu!"); return; }
+    appData.selectedBranchEngineUrl = url;
+    renderBranchSearch();
+    saveData();
+}
+
+function updateBranchEngineUrl(groupId, value) {
+    const group = appData.branchGroups.find(g => g.id === groupId);
+    if(group) group.engineUrl = value;
+    saveData();
+}
+
+function handleAddBranchKeyword(e, groupId) {
+    if(e.key === "Enter" && e.target.value !== "") {
+        const group = appData.branchGroups.find(g => g.id === groupId);
+        if(!group.branches) group.branches = [];
+        group.branches.push(e.target.value);
+        e.target.value = "";
+        renderAll();
+    }
+}
+
+function updateBranchItem(groupId, index, value) {
+    const group = appData.branchGroups.find(g => g.id === groupId);
+    if(group) group.branches[index] = value;
+    saveData();
+}
+
+function deleteBranchItem(groupId, index) {
+    const group = appData.branchGroups.find(g => g.id === groupId);
+    if(group) {
+        group.branches.splice(index, 1);
+        renderAll();
+    }
+}
+
+// MEKANISME EKSEKUSI PENCARIAN BRANCHING
+function executeBranchSearch(groupId) {
+    const mainQuery = document.getElementById("branchMainInp").value.trim();
+    if(!mainQuery) {
+        alert("Harap isi Main Search (Batang) terlebih dahulu!");
+        return;
+    }
+    
+    if(!appData.selectedBranchEngineUrl) {
+        alert("Harap pilih 1 Search Engine terlebih dahulu!");
+        return;
+    }
+
+    const group = appData.branchGroups.find(g => g.id === groupId);
+    if(!group || !group.branches || group.branches.length === 0) {
+        alert("Belum ada branch keywords dalam grup ini!");
+        return;
+    }
+
+    // Buka tab sebanyak cabang dropdown
+    group.branches.forEach(branch => {
+        const finalQuery = `${mainQuery} ${branch}`;
+        const searchUrl = appData.selectedBranchEngineUrl + encodeURIComponent(finalQuery);
+        window.open(searchUrl, "_blank");
+    });
 }
 
 // --- NAVIGASI ---
@@ -238,6 +395,19 @@ function deleteItem(id, type) {
         renderAll();
     }
 }
+
+const originalDeleteItem = deleteItem;
+deleteItem = function(id, type) {
+    if(type === 'branch') {
+        if(confirm("Hapus Group Branch ini?")) {
+            appData.branchGroups = appData.branchGroups.filter(g => g.id !== id);
+            renderAll();
+        }
+    } else {
+        originalDeleteItem(id, type);
+    }
+};
+
 function swapLanguages() {
     const f = document.getElementById("langFrom"), t = document.getElementById("langTo");
     const tmp = f.value; f.value = t.value; t.value = tmp;

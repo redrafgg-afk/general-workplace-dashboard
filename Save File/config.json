@@ -718,5 +718,21 @@
       "isOpened": false
     }
   ],
-  "calcHistory": []
+  "calcHistory": [],
+  "branchGroups": [
+    {
+      "id": 1786686886639,
+      "summary": "Scholar",
+      "engineUrl": "https://scholar.google.com/scholar?hl=en&as_sdt=",
+      "branches": [
+        "graphylum pictum",
+        "High fat diet",
+        "Liver histology",
+        "metformin"
+      ],
+      "isOpened": false
+    }
+  ],
+  "currentSearchMode": "multi",
+  "selectedBranchEngineUrl": "https://scholar.google.com/scholar?hl=en&as_sdt="
 }

@@ -343,3 +343,35 @@ body { margin: 0; font-family: var(--font-mono); background-color: var(--vscode-
     line-height: 1.5;
     display: block;
 }
+
+/* Styling Tombol Penukar Mode */
+.mode-btn {
+    background: var(--vscode-card);
+    border: 1px solid #444;
+    color: var(--vscode-text);
+    padding: 6px 12px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.mode-btn.active {
+    background: var(--vscode-accent);
+    color: white;
+    border-color: var(--vscode-accent);
+}
+
+.selected-engine-badge {
+    font-size: 0.85rem;
+    color: #4ec9b0;
+    background: #1e1e1e;
+    padding: 6px 10px;
+    border-left: 3px solid var(--vscode-accent);
+    margin-top: 5px;
+}
+
+.selected-branch-group {
+    background: rgba(0, 122, 204, 0.15);
+    border-left: 3px solid var(--vscode-accent);
+}
